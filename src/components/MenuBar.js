@@ -2,6 +2,8 @@ import React from 'react'
 
 const MenuBar = (props) => {
 
+
+
   /*
 
   The 'a' tags below are the menu items. Think about the way a menu 
@@ -12,22 +14,34 @@ const MenuBar = (props) => {
   this component be made aware of what is currently the active menu item?
 
   */
+  
+  let activePages = {
+    profile: '',
+    photo: '',
+    cocktail: '',
+    pokemon: ''
+  }
+
+  activePages[props.selected] = 'active'
+
+
+
 
   return (
     <div className="ui four item menu">
-      <a className="item active" id="profile">
+      <a className={`item ` + activePages['profile']} id="profile" onClick={props.selectButton} >
         <i className="user large icon" id="profile"/>
       </a>
 
-      <a className="item" id="photo">
+      <a className={`item ` + activePages['photo']} id="photo"  onClick={props.selectButton} >
         <i className="photo large icon" id="photo"/>
       </a>
 
-      <a className="item" id="cocktail">
+      <a className={`item ` + activePages['cocktail']} id="cocktail"  onClick={props.selectButton} >
         <i className="cocktail large icon" id="cocktail"/>
       </a>
 
-      <a className="item" id="pokemon"> 
+      <a className={`item ` + activePages['pokemon']} id="pokemon"  onClick={props.selectButton} > 
         <i className=" themeisle large icon" id="pokemon"/>
       </a>
     </div>

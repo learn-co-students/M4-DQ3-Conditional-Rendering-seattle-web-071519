@@ -4,8 +4,8 @@ import {Card, Button, Image, Loader} from 'semantic-ui-react'
 
 /*No need to code in here! These are merely presentational components.*/
 
-export const Profile = () => (
-  <Card fluid>
+export const Profile = () => {
+  return (<Card fluid>
     <Card.Content textAlign="center">
       <h3>Hi, my name is {userData.name}</h3>
       <h5>A little about me: </h5>
@@ -13,18 +13,18 @@ export const Profile = () => (
       <p>Favorite phrase: {userData.catchphrase}</p>
       <p>Age: {userData.age}</p>
     </Card.Content>
-  </Card>
-)
+  </Card>)
+}
 
 
-export const Photos = () => (
-  <Card fluid>
+export const Photos = () => {
+  return (<Card fluid>
     <Card.Content textAlign="center">
       <h2>{photo.title}</h2>
       <Image src={photo.url}/>
     </Card.Content>
-  </Card>
-)
+  </Card>)
+}
 
 
 export const Cocktails = () => {
