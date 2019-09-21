@@ -12,23 +12,33 @@ const MenuBar = (props) => {
   this component be made aware of what is currently the active menu item?
 
   */
+  
+
+  function handleIconClick (event) {
+    let currentActive = document.querySelector(".active")
+    currentActive.classList.remove("active")
+    // debugger
+    event.target.parentElement.className = ("item active")
+    
+    props.onUpdateSelectedTab(event.target.id)
+  }
 
   return (
     <div className="ui four item menu">
       <a className="item active" id="profile">
-        <i className="user large icon" id="profile"/>
+        <i className="user large icon" id="profile" onClick={handleIconClick}/>
       </a>
 
       <a className="item" id="photo">
-        <i className="photo large icon" id="photo"/>
+        <i className="photo large icon" id="photo" onClick={handleIconClick}/>
       </a>
 
       <a className="item" id="cocktail">
-        <i className="cocktail large icon" id="cocktail"/>
+        <i className="cocktail large icon" id="cocktail" onClick={handleIconClick}/>
       </a>
 
       <a className="item" id="pokemon"> 
-        <i className=" themeisle large icon" id="pokemon"/>
+        <i className=" themeisle large icon" id="pokemon" onClick={handleIconClick}/>
       </a>
     </div>
   )
